@@ -46,8 +46,9 @@
         function goBack(){
             window.history.back(); 
         }
-        function selectLm(lmid){
-            window.location.href = "/mobile/index.html?lmid="+lmid;    
+        function selectLm(lmid,lmmc){
+	    curLm = { mc:lmmc, lmid:lmid };
+            window.location.href = "/index.html";    
         }
         function loaded() {
             hideHeader = false;
