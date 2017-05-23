@@ -21,7 +21,7 @@ bottom: 0px;
 
     width: 100%;
     height: 65px;
-    background-color: #9B856D;
+    background-color: #2f76a2;
     background-size: 100% 100%;
     z-index: 2;
 }
@@ -54,7 +54,7 @@ bottom: 0px;
     padding-left: 10px;
     padding-right: 10px;
     position: relative;
-    background-color: #9B856D;
+    background-color: #2f76a2;
 }
 .news-title .menu{
     padding-bottom: 13px;
