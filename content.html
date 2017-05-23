@@ -67,37 +67,18 @@
                 },
             });
         }
-       /* function initNav(){
-            $.ajax({
-                    type: 'GET',
-                    // url: 'service?wdApplication=xw&wdService=wenz_cx_Phone',
-                    url: '/service?wdApplication=wd&wdService=wzlmcx',
-                    dataType: 'json',
-                    async:false,
-                    success:function(ret){
-                        lmList = ret;
-                        var lmListEl = $('#lmList');
-                        if(ret.length > 0){
-                            curLm = ret[0];
-                        }
-                        for(var i = 0 ; i < ret.length; i++){
-                            lmListEl.append('<li><span class="drawer-menu-item-icon"></span><a class="drawer-menu-item" href="javascript:selectLm(\''+ret[i].lmid+'\')">'+ret[i].mc+'</a></li>')
-                        }
-
-                    }
-                });
-        }*/
+      
 		function initNav(){
 			var lmListEl = $('#lmList');
-			lmListEl.append('<li><span class="drawer-menu-item-icon"></span><a class="drawer-menu-item" href="javascript:selectLm(44016036,\'新闻中心\')">新闻中心</a></li> '+
-			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-2"></span><a class="drawer-menu-item" href="javascript:selectLm(44016038,\'机构中心\')">机构中心</a></li> '+
-			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-3"></span><a class="drawer-menu-item" href="javascript:selectLm(44016044,\'文化中心\')">文化中心</a></li> '+
-			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-4"></span><a class="drawer-menu-item" href="javascript:selectLm(44016105,\'人物中心\')">人物中心</a></li> '+
-			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-9"></span><a class="drawer-menu-item" href="javascript:selectLm(44016057,\'交流中心\')"> 交流中心</a></li> '+
-			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-5"></span><a class="drawer-menu-item" href="javascript:selectLm(44016060,\'公益中心\')">公益中心</a></li> '+
-			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-6"></span><a class="drawer-menu-item" href="javascript:selectLm(44016065,\'视频中心\')">视频中心</a></li> '+
-			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-8"></span><a class="drawer-menu-item" href="javascript:selectLm(44016195,\'专题中心\')">专题中心</a></li> '+
-			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-7"></span><a class="drawer-menu-item" href="/mobile/contect.html">联系我们</a></li>');
+			lmListEl.append('<li><span class="drawer-menu-item-icon"></span><a class="drawer-menu-item" href="javascript:selectLm(\'rdxw_div\',\'新闻中心\')">新闻中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-2"></span><a class="drawer-menu-item" href="javascript:selectLm(\'jgjs_div\',\'机构中心\')">机构中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-3"></span><a class="drawer-menu-item" href="javascript:selectLm(\'gfwh_div\',\'文化中心\')">文化中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-4"></span><a class="drawer-menu-item" href="javascript:selectLm(\'gfrw_div\',\'人物中心\')">人物中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-9"></span><a class="drawer-menu-item" href="javascript:selectLm(\'jlhz_div\',\'交流中心\')"> 交流中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-5"></span><a class="drawer-menu-item" href="javascript:selectLm(\'csgy_div\',\'公益中心\')">公益中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-6"></span><a class="drawer-menu-item" href="javascript:selectLm(\'spzx_div\',\'视频中心\')">视频中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-8"></span><a class="drawer-menu-item" href="javascript:selectLm(\'zahyzt_div\',\'专题中心\')">专题中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-7"></span><a class="drawer-menu-item" href="./contect.html">联系我们</a></li>');
         }
 
         function openDrawer(){
@@ -139,8 +120,8 @@
             </div>
         </div>
     <div id="footer" class="footer">
-        <p>©2013 广东省广府人珠玑巷后裔海外联谊会 版权所有</p>
-        <p>粤 ICP 备 12045028 号 粤公网安备 44040202000239 号</p>
+        <p>©2013 火星上的中国人 版权所有</p>
+        <p>版权：块巨石对咯i俱乐部呢 21246551366号</p>
     </div>
     </div>
 </main>
