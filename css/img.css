@@ -1,0 +1,142 @@
+@charset "utf-8";
+/*全局大盒子*/
+#full{
+    /* width: 19.74rem; */
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*头部样式 其中包裹logo与menu菜单按钮*/
+.header{
+    width: 100%;
+    height: 3.37rem;
+    background-color: #008ce5;
+    background-image: url("../images/logo.png");
+    background-size: 100% 100%;
+}
+.header a{
+    padding: 2rem 10rem;
+}
+/*logo样式*/
+/*logo如果本机有对应的字体使用以下代码*/
+/*.header .logo{*/
+/*width: 2.79rem;*/
+/*height: 2.53rem;*/
+/*position: relative;*/
+/*top: 0.42rem;*/
+/*left: 2.97rem;*/
+/*}*/
+/*!*logo文字样式*!*/
+/*.header .logo-text{*/
+/*text-align: center;*/
+/*position: absolute;*/
+/*left: 5.95rem;*/
+/*top: 0.60rem;*/
+/*color: white;*/
+/*}*/
+/*!*logo文字样式(中文)*!*/
+/*.header .logo-text .chinese{*/
+/*font-size: 1.02rem;*/
+/*font-family: 'FZHTJW';*/
+/*}*/
+/*!*logo文字样式(英文)*!*/
+/*.header .logo-text .english{*/
+/*font-size: 0.78rem;*/
+/*}*/
+
+/*menu菜单样式*/
+/*.header .menu{*/
+    /*width: 1.61rem;*/
+    /*height:1.03rem ;*/
+    /*position: absolute;*/
+    /*top:1.18rem;*/
+    /*right: 0.6rem;*/
+/*}*/
+
+/*正文部分 包括菜单，正文*/
+.content{
+    width: 100%;
+    min-height: 27.53rem;
+    background-color: #f2f2f2;
+}
+/*菜单栏*/
+.content .content-nav{
+    width: 100%;
+    height: 2.35rem;
+    margin-top:0.53rem;
+    padding: 0.63rem 1.11rem;
+    background-color: #ffffff;
+}
+/*菜单栏小图标*/
+.content .content-nav>span{
+    width: 0.81rem;
+    height: 1.04rem;
+    background-image: url("../images/pin.png");
+    background-size: 100% 100%;
+    display: block;
+    float: left;
+    margin-right: 0.42rem;
+}
+/*菜单栏文字*/
+.content .content-nav p{
+    font-size: 0.79rem;
+    color: #a0a0a0;
+}
+/* 图片样式 */
+.content-text{
+    width: 100%;
+    padding: 0.74rem;
+    /* height: 27rem; */
+    height: 24.95rem;
+    position: relative;
+}
+.content-text .content-img{
+    width: 100%;
+    height: 10.21rem;
+    margin-bottom: 20px;
+}
+.content-text .content-img img{
+    width: 100%;
+    height: 100%;
+}
+/* .content-text img:nth-child(odd){
+    margin-right: 0.84rem;
+} */
+
+/*尾部样式 包括版权所有*/
+.footer{
+    width: 100%;
+    height: 3.24rem;
+    background-color: #005291;
+    color: white;
+    font-size: 0.66rem;
+    text-align: center;
+    padding-top: 0.5rem;
+    line-height: 1.8;
+    /* position: fixed; */
+
+
+}
+
+/* 列表页 */
+.a{
+    border-bottom: 1px dotted gray;
+}
+
+ /* 图片放大 暂停使用*/
+/* .big-img{
+    background-color: rgba(242,242, 242, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    z-index: 1000;
+}
+.big-img .img{
+    width: 100%;
+    margin-top: 30%;
+
+}
+*/

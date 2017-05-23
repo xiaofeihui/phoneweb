@@ -1,0 +1,34 @@
+        .banner{height: 180px;}
+        .banner .tb-btn{
+            right: 2px;
+            bottom: 2px;
+        }
+        .banner .tb-btn a{
+            margin: 0 2px;
+            height: 5px;
+            width: 5px;
+        }
+        .banner li{
+            position: relative;
+        }
+        .banner li img{
+            width: 100%;
+        }
+        .banner li p{
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            height: 24px;
+            font-size: 12px;
+            line-height: 24px;
+            padding-left: 8px;
+            padding-right: 40px;
+            overflow:hidden; 
+            white-space:nowrap; 
+            text-overflow:ellipsis;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff
+        }

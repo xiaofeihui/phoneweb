@@ -1,0 +1,78 @@
+@charset "utf-8";
+/*全局大盒子*/
+#full{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*正文部分 包括菜单，正文*/
+.content{
+    width: 100%;
+    min-height: 30rem;
+    background-color: #fff;
+}
+/*菜单栏*/
+.content-nav{
+    width: 100%;
+    /*height: 2.35rem;
+    margin-top:0.53rem;*/
+    height: 40px;
+    line-height: 40px;
+    /*padding: 0.63rem 1.11rem;*/
+    background-color: #ffffff;
+}
+/*菜单栏小图标*/
+.content-nav>span{
+    width: 0.81rem;
+    height: 1.04rem;
+    background-image: url("../images/pin.png");
+    background-size: 100% 100%;
+    display: block;
+    float: left;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-right: 0.42rem;
+}
+/*菜单栏文字*/
+.content-nav p{
+    font-size: 0.79rem;
+    color: #a0a0a0;
+}
+/*导航栏正文样式*/
+.nav-p{
+    color: #008ce5;
+    font-weight: bold;
+}
+.content .content-text{
+    font-size: 14px;
+    text-indent: 25px;
+    font-family: 'PingFang SC', 'Myriad Pro', 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', sans-serif;
+    padding: 0.63rem 1.11rem;
+}
+/* 列表页 */
+.a{
+    border-bottom: 1px dotted gray;
+    margin-bottom: 0.3rem;
+}
+
+
+.content .content-text1{
+    width: 100%;
+    height: 24.95rem;
+    font-family: 'PingFang SC', 'Myriad Pro', 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', sans-serif;
+    padding: 0.63rem 1.11rem;
+}
+.zw_time{
+    line-height: 25px;
+    text-align: right;
+    font-size: 14px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+.zw_bt{
+    line-height: 40px;
+    font-size: 17px;
+    font-weight: bold;
+    text-indent: 30px;
+}

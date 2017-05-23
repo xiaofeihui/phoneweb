@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon.png">
+<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="./css/mobile.css">
+<link rel="stylesheet" href="./css/zw.css">
+<link rel="stylesheet" href="./css/drawer.min.css">
+ <link rel="stylesheet" href="./css/common.css">
+ <link rel="stylesheet" href="./css/pullRefresh.css">
+<script src="./js/jquery.1.10.2.js"></script>
+<script src="./js/drawer.min.js"></script>
+<!-- <script src="/mobile/js/jquery.mobile-1.3.2.min.js"></script> -->
+    <script src="./js/iscroll.min.js"></script>
+    <script type="text/javascript" src="./js/iscroll.js"></script>
+<script>
+    var myScroll,
+        pullDownEl, pullDownOffset,
+        pullUpEl, pullUpOffset,
+        generatedCount = 0;
+        $(document).ready(function() {
+            loaded();
+            initNav();
+            $('.drawer').drawer({});
+        }); 
+        function goBack(){
+            window.history.back(); 
+        }
+        function selectLm(lmid,lmmc){
+            curLm = { mc:lmmc, lmid:lmid };
+            window.location.href = "./index.html";
+        }
+        function loaded() {
+            hideHeader = false;
+            myScroll = new iScroll('wrapper', {
+                // useTransition: true,
+                onScrollMove: function () {
+                    if(!hideHeader){
+                        hideHeader = true;
+                        $('#header').animate({top:-$('.header').outerHeight()});
+                        $('#wrapper').animate({top:$('.news-title').outerHeight(),bottom:0},function(){
+                            myScroll.refresh();
+                            
+                        });
+                        $('#footer').animate({bottom:-$('#footer').innerHeight()});
+                        
+                    }
+                },
+            });
+        }
+      function initNav(){
+			var lmListEl = $('#lmList');
+          lmListEl.append('<li><span class="drawer-menu-item-icon"></span><a class="drawer-menu-item" href="javascript:selectLm(\'rdxw_div\',\'新闻中心\')">新闻中心</a></li> '+
+                  '<li><span class="drawer-menu-item-icon drawer-menu-item-icon-2"></span><a class="drawer-menu-item" href="javascript:selectLm(\'jgjs_div\',\'机构中心\')">机构中心</a></li> '+
+                  '<li><span class="drawer-menu-item-icon drawer-menu-item-icon-3"></span><a class="drawer-menu-item" href="javascript:selectLm(\'gfwh_div\',\'文化中心\')">文化中心</a></li> '+
+                  '<li><span class="drawer-menu-item-icon drawer-menu-item-icon-4"></span><a class="drawer-menu-item" href="javascript:selectLm(\'gfrw_div\',\'人物中心\')">人物中心</a></li> '+
+                  '<li><span class="drawer-menu-item-icon drawer-menu-item-icon-9"></span><a class="drawer-menu-item" href="javascript:selectLm(\'jlhz_div\',\'交流中心\')"> 交流中心</a></li> '+
+                  '<li><span class="drawer-menu-item-icon drawer-menu-item-icon-5"></span><a class="drawer-menu-item" href="javascript:selectLm(\'csgy_div\',\'公益中心\')">公益中心</a></li> '+
+                  '<li><span class="drawer-menu-item-icon drawer-menu-item-icon-6"></span><a class="drawer-menu-item" href="javascript:selectLm(\'spzx_div\',\'视频中心\')">视频中心</a></li> '+
+                  '<li><span class="drawer-menu-item-icon drawer-menu-item-icon-8"></span><a class="drawer-menu-item" href="javascript:selectLm(\'zahyzt_div\',\'专题中心\')">专题中心</a></li> '+
+                  '<li><span class="drawer-menu-item-icon drawer-menu-item-icon-7"></span><a class="drawer-menu-item" href="./contect.html">联系我们</a></li>');
+      }
+
+        function openDrawer(){
+            $('.drawer').drawer('open');
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        $(function(){
+            var bodyHeight = $(".main-box").height()-45;
+            var Height = bodyHeight-$(".foot-contect").height()-20;
+            $("#wrapper,.content").css({'height':Height,"min-height":'15rem'});
+            $("#map").css({"width":$(window).width(),'height':Height});
+            $('.foot-contect').css({'width':$(window).width()});
+	    });
+</script>
+<title>正文</title>
+</head>
+<body  class="drawer drawer--right" style="background-color: #f2f2f2;">
+   <header role="banner">
+    <nav class="drawer-nav"  style="z-index: 3;overflow: scroll" role="navigation">
+      <ul class="drawer-menu" id="lmList">
+        
+      </ul>
+    </nav>
+  </header>
+  <main role="main">
+    <div class="main-box" style="position: fixed;top: 0px;left: 0px;bottom: 0px;right: 0px;">
+        <div id="header" class="header-container">
+        <div id="news-title" class="news-title">
+            <img class="menu" onClick="openDrawer()" src="./images/menu.png"  />
+            <p class="text" id="wzbt">联系我们</p>
+            <div class="under-line"></div>
+        </div>
+            <div class="content-nav">
+                    <span></span><p><a href='/' style="color:#a0a0a0" data-ajax='false'>首页</a> > <a href="/" style="color:#a0a0a0" class="lmid"></a> > <span class="nav-p">正文</span></p>
+            </div>
+        </div>
+        <div id='wrapper' class="content" style="top: 45px;">
+            <div id="scroller" >
+                <div class="content">
+                    <!--百度地图容器-->
+                    <div style="width:700px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+                </div>
+            </div>
+        </div>
+        <div class="foot-contect">
+              <p><em></em>地址：广州市越秀区先烈中路83号凯城华庭商务中心501-1</p>
+              <p>电话：8260-81378100</p>
+              <p>lyh@zhujixiang.com</p>
+        </div>
+    </div>
+</main>
+<!--引用百度地图API-->
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=c3swXoPogILK88HPeN6HTe7PpWxEOotn"></script>
+-->
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=c3swXoPogILK88HPeN6HTe7PpWxEOotn"></script>
+
+    <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(113.306319,23.148096),19);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"广州市省科技图书馆附近",title:"我的标记",imageOffset: {width:0,height:3},position:{lat:23.148096,lng:113.306238}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+</body>
+</html>

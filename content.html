@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="apple-touch-icon-precomposed" href="./images/apple-touch-icon.png">
+<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="./css/mobile.css">
+<link rel="stylesheet" href="./css/zw.css">
+<link rel="stylesheet" href="./css/drawer.min.css">
+ <link rel="stylesheet" href="./css/common.css">
+ <link rel="stylesheet" href="./css/pullRefresh.css">
+ <style>
+    #head-img{
+        text-align: center;
+        max-height: 180px;
+        overflow:hidden;
+    }
+    #head-img img{
+        height:180px;
+    }
+ </style>
+
+<script src="./js/jquery.1.10.2.js"></script>
+<script src="./js/drawer.min.js"></script>
+<!-- <script src="/mobile/js/jquery.mobile-1.3.2.min.js"></script> -->
+<script src="./js/zwAJAX.js"></script>
+<script src="./js/iscroll.min.js"></script>
+<script type="text/javascript" src="./js/iscroll.js"></script>
+<script>
+    var myScroll,
+        pullDownEl, pullDownOffset,
+        pullUpEl, pullUpOffset,
+        generatedCount = 0;
+        $(document).ready(function() {
+            loaded();
+            initNav();
+            $('.drawer').drawer({});
+        }); 
+        function goBack(){
+            window.history.back(); 
+        }
+        function selectLm(lmid){
+            window.location.href = "/mobile/index.html?lmid="+lmid;    
+        }
+        function loaded() {
+            hideHeader = false;
+            myScroll = new iScroll('wrapper', {
+                // useTransition: true,
+                onScrollMove: function () {
+                    if(!hideHeader){
+                        hideHeader = true;
+                        $('#header').animate({top:-$('.header').outerHeight()});
+                        $('#wrapper').animate({top:$('.news-title').outerHeight(),bottom:0},function(){
+                            myScroll.refresh();
+                            
+                        });
+                        $('#footer').animate({bottom:-$('#footer').innerHeight()});
+                        
+                    }
+                },
+            });
+        }
+       /* function initNav(){
+            $.ajax({
+                    type: 'GET',
+                    // url: 'service?wdApplication=xw&wdService=wenz_cx_Phone',
+                    url: '/service?wdApplication=wd&wdService=wzlmcx',
+                    dataType: 'json',
+                    async:false,
+                    success:function(ret){
+                        lmList = ret;
+                        var lmListEl = $('#lmList');
+                        if(ret.length > 0){
+                            curLm = ret[0];
+                        }
+                        for(var i = 0 ; i < ret.length; i++){
+                            lmListEl.append('<li><span class="drawer-menu-item-icon"></span><a class="drawer-menu-item" href="javascript:selectLm(\''+ret[i].lmid+'\')">'+ret[i].mc+'</a></li>')
+                        }
+
+                    }
+                });
+        }*/
+		function initNav(){
+			var lmListEl = $('#lmList');
+			lmListEl.append('<li><span class="drawer-menu-item-icon"></span><a class="drawer-menu-item" href="javascript:selectLm(44016036,\'新闻中心\')">新闻中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-2"></span><a class="drawer-menu-item" href="javascript:selectLm(44016038,\'机构中心\')">机构中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-3"></span><a class="drawer-menu-item" href="javascript:selectLm(44016044,\'文化中心\')">文化中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-4"></span><a class="drawer-menu-item" href="javascript:selectLm(44016105,\'人物中心\')">人物中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-9"></span><a class="drawer-menu-item" href="javascript:selectLm(44016057,\'交流中心\')"> 交流中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-5"></span><a class="drawer-menu-item" href="javascript:selectLm(44016060,\'公益中心\')">公益中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-6"></span><a class="drawer-menu-item" href="javascript:selectLm(44016065,\'视频中心\')">视频中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-8"></span><a class="drawer-menu-item" href="javascript:selectLm(44016195,\'专题中心\')">专题中心</a></li> '+
+			'<li><span class="drawer-menu-item-icon drawer-menu-item-icon-7"></span><a class="drawer-menu-item" href="/mobile/contect.html">联系我们</a></li>');
+        }
+
+        function openDrawer(){
+            $('.drawer').drawer('open');
+        }
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+</script>
+<title>正文</title>
+</head>
+<body  class="drawer drawer--right" style="background-color: #f2f2f2;">
+  <header role="banner">
+    <nav class="drawer-nav"  style="z-index: 3;overflow: scroll" role="navigation">
+      <ul class="drawer-menu" id="lmList">
+        
+      </ul>
+    </nav>
+  </header>
+  <main role="main">
+    <div style="position: fixed;top: 0px;left: 0px;bottom: 0px;right: 0px;">
+        <div id="header" class="header-container">
+        <div id="news-title" class="news-title">
+            <img class="back" onClick="goBack()" src="./images/arrow_left.png"  />
+            <img class="menu" onClick="openDrawer()" src="./images/menu.png"  />
+            <p class="text" id="wzbt"></p>
+            <div class="under-line"></div>
+        </div>
+            <!--<div class="content-nav">
+                    <span></span><p><a href='/' style="color:#a0a0a0" data-ajax='false'>首页</a> > <a href="/" style="color:#a0a0a0" class="lmid"></a> > <span class="nav-p">正文</span></p>
+            </div>-->
+        </div>
+        <div id='wrapper' class="content" style="top: 45px;">
+            <div id="scroller" >
+                <div class="content">
+                    <div id="head-img"></div>
+                    <div class="zw_bt"></div>
+                    <div class="zw_time"></div>
+                    <div class="content-text">正文</div>
+                </div>
+            </div>
+        </div>
+    <div id="footer" class="footer">
+        <p>©2013 广东省广府人珠玑巷后裔海外联谊会 版权所有</p>
+        <p>粤 ICP 备 12045028 号 粤公网安备 44040202000239 号</p>
+    </div>
+    </div>
+</main>
+</body>
+</html>

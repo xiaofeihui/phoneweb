@@ -1,0 +1,9 @@
+@charset "UTF-8";
+html{font-size: 37.5px;}
+.mhome{
+    padding: 0;
+    min-width: 300px;
+    max-width: 640px;
+    margin: 0 auto;
+    background: gray;
+}

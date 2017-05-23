@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>-->
+
+    <link rel="stylesheet" href="./css/drawer.min.css">
+    <link rel="stylesheet" href="./css/pullRefresh.css">
+    <!-- jquery & iScroll -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/iscroll.min.js"></script>
+    <script type="text/javascript" src="./js/iscroll.js"></script>
+
+    <!-- drawer.js -->
+    <script src="./js/drawer.min.js"></script>
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/banner.css">
+    <script type="text/javascript">
+
+    </script>
+    <title>广府联谊-移动端</title>
+</head>
+<body  class="drawer drawer--right" style="background-color: #f2f2f2;">
+  <header role="banner">
+    <nav class="drawer-nav"  style="z-index: 3;overflow: scroll" role="navigation">
+      <ul class="drawer-menu" id="lmList">
+        
+      </ul>
+    </nav>
+  </header>
+  <main role="main">
+<div id="full">
+    <!--header-->
+    <div id="header" class="header-container">
+        <div  class="header">
+            <img src="./images/logo.png" >
+            <!-- <img src="/web/4401782/images/4401782_1487817028489.png" > -->
+        </div>
+        <div id="news-title" class="news-title">
+            <img class="menu" onClick="openDrawer()" src="./images/menu.png"  />
+            <p id="lmmc" class="text">新闻中心<span></span></p>
+        </div>
+    </div>
+    <div id='wrapper' class="content">
+        <div id="scroller">
+            <div id="pullDown">
+                <span class="pullDownIcon"></span><span class="pullDownLabel">继续下拉刷新...</span>
+            </div>
+        <div class="banner">
+            <ul>
+            </ul>
+        </div>
+        <script type="text/javascript" src="./js/jquery.terseBanner.min.js"></script>
+        <script>
+
+
+
+
+           
+        </script>
+            <!--推荐新闻栏目-->
+            <div id="news" class="news">
+
+                
+                <!--<img src="/mobile/images/border.jpg" alt="分割线">-->
+            </div>
+            <div id="pullUp" style="text-align: center">
+                <!--<span class="pullUpIcon"></span-->
+                <span class="pullUpLabel">正在加载更多...</span>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="footer">
+        <p>©2017 广东省广府人珠玑巷后裔海外联谊会 版权所有</p>
+        <p>粤 ICP 备 12045028 号 粤公网安备 44040202000239 号</p>
+    </div>
+</div>
+  </main>
+</body>
+</html>
